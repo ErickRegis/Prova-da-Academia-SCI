@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Media do aluno, maior/menor media</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <!--(Erick Danilo REgis) 5.Crie uma matriz bidimensional. Deverá ser solicitado três nomes de alunos e quatro notas,
+    após solicitação dos nomes e das notas deverá ser impresso os nomes acompanhados da média geral de cada aluno,
+    deverá ser impresso também o nome do aluno que obteve a maior média e o nome do aluno que obteve a menor média.-->
+    <body>
+        <script>
+            
+            //cria a matriz bidimensional de notas
+            var notas = [];
+            
+            //solicita os nomes dos alunos e adiciona-os à matriz
+            for (var i = 0; i < 3; i++) {
+                var aluno = prompt("Digite o nome do aluno " + (i + 1) + ": ");
+                notas[i] = [aluno];
+                
+                //solicita as notas do aluno e adiciona-as à matriz
+                for (var j = 1; j <= 4; j++) {
+                    var nota = parseFloat(prompt("Digite a nota " + j + "° do aluno " + aluno + ": "));
+                    notas[i][j] = nota;
+                }
+            }
+            
+            //calcula a média geral de cada aluno e verifica o maior e menor valor
+            var maiorMedia = 0;
+            var menorMedia = 10;
+            var nomeMaiorMedia, nomeMenorMedia;
+            
+            for (var i = 0; i < notas.length; i++) {
+                var soma = 0;
+                
+                for (var j = 1; j <= 4; j++) {
+                    soma += notas[i][j];
+                }
+                
+                var media = soma / 4;
+                notas[i].push(media); //adiciona a média ao final do array do aluno
+                
+                if (media > maiorMedia) {
+                    maiorMedia = media;
+                    nomeMaiorMedia = notas[i][0];
+                }
+                
+                if (media < menorMedia) {
+                    menorMedia = media;
+                    nomeMenorMedia = notas[i][0];
+                }
+            }
+            
+            //imprime os nomes dos alunos e a média geral de cada um
+            for (var i = 0; i < notas.length; i++) {
+                console.log(notas[i][0] + ": " + notas[i][5]);
+            }
+            
+            //imprime o nome do aluno com a maior média e o aluno com a menor média
+            document.write("O aluno com a maior média é " + nomeMaiorMedia + " com " + maiorMedia);
+            document.write("<br>");
+            document.write("O aluno com a menor média é " + nomeMenorMedia + " com " + menorMedia);
+        </script>
+    </body>
+</html>
