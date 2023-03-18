@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Media, Números pares e ímpares. </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <!--(Erick Danilo Regis) 1.Solicitar a inserção de 5´números, ao final imprimir os numeros pares,
+       números ímpares e a média geral desses números-->
+    <body>
+        <script>
+
+            var numeros = 0;
+            var cont = 1; //contador
+
+            for (var i = 0; i < 5; i++) {
+                var valor = parseInt(prompt("Digite o " + cont + "° número: "));
+                numeros = numeros + valor;
+                
+                   //descobrir se o numero é par ou impar
+                if (valor % 2 === 0) {
+                    document.write("O valor " + valor + " é par. ");
+                    document.write("<br>");
+                } else {
+                    document.write("O valor " + valor + " é ímpar. ");
+                    document.write("<br>");
+                }
+
+                cont++; //adiciornar +1 no contador 
+            }
+            // descobrindo a media
+            var media = numeros / 5;                         //erredoda o numero em duas casas decimais, mas pode ser mudado
+            document.write("A média dos valores é: " + media.toFixed(2));
+
+
+        </script>
+    </body>
+</html>
+
