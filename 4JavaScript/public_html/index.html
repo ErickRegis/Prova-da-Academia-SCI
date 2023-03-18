@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Vetor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <!--(Erick Danilo Regis)  4.Criar um vetor de cinco posições,
+    solicitar cinco números e ao fim, imprimir o valor apresentado na posição três. -->
+    <body>
+        <script>
+           
+            var cont = 1;
+            var vetor = [];  //criando o vetor 
+            //adicionado os valores dentro de um vetor 
+         for (var i = 0; i <= 4; i++) {
+                vetor [i]  = parseInt(prompt("Digite a posição " + cont + " do vetor: "));
+                cont++;
+            }
+            
+            document.write("O valor do 3° vetor é: " + vetor[2]); // a contagem do computador começa no 0 
+                                                                  // entao 0, 1, 2 <-- é o terceiro numero digitado
+
+        </script>
+    </body>
+</html>
